@@ -1,6 +1,7 @@
 package optifinecitpatch;
 
 import fermiumbooter.FermiumRegistryAPI;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import java.util.Map;
@@ -9,7 +10,7 @@ import java.util.Map;
 public class OptiFineCITPatch implements IFMLLoadingPlugin {
 
 	public OptiFineCITPatch() {
-		FermiumRegistryAPI.enqueueMixin(true, "mixins.optifinecitpatch.json", () -> true);
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.optifinecitpatch.json", () -> Loader.isModLoaded("optifine"));
 	}
 
 	@Override
