@@ -7,10 +7,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(ParserEnchantmentId.class)
-public class ParserEnchantmentIdMixin {
+public abstract class ParserEnchantmentIdMixin {
 
     @ModifyReturnValue(method = "parse", at = @At("RETURN"), remap = false)
-    private int optifinecitpatch_overrideReturnIfDefault(int original, @Local(argsOnly = true) int defValue) {
-        return original == defValue ? -1 : original;
+    private int optifinecitpatch_overrideReturnIfDefault(int returnValue, @Local(argsOnly = true) int defValue) {
+        return returnValue == defValue ? -1 : returnValue;
     }
 }

@@ -1,42 +1,13 @@
 package optifinecitpatch;
 
-import fermiumbooter.FermiumRegistryAPI;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import net.minecraftforge.fml.common.Mod;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.Map;
-
-@IFMLLoadingPlugin.MCVersion("1.12.2")
-public class OptiFineCITPatch implements IFMLLoadingPlugin {
-
-	public OptiFineCITPatch() {
-		FermiumRegistryAPI.enqueueMixin(true, "mixins.optifinecitpatch.json", () -> Loader.isModLoaded("optifine"));
-	}
-
-	@Override
-	public String[] getASMTransformerClass()
-	{
-		return new String[0];
-	}
-	
-	@Override
-	public String getModContainerClass()
-	{
-		return null;
-	}
-	
-	@Override
-	public String getSetupClass()
-	{
-		return null;
-	}
-	
-	@Override
-	public void injectData(Map<String, Object> data) { }
-	
-	@Override
-	public String getAccessTransformerClass()
-	{
-		return null;
-	}
+@Mod(modid = OptiFineCITPatch.MODID, version = OptiFineCITPatch.VERSION, name = OptiFineCITPatch.NAME, dependencies = "required-after:fermiumbooter", acceptableRemoteVersions = "*")
+public class OptiFineCITPatch {
+    public static final String MODID = "optifinecitpatch";
+    public static final String VERSION = "1.0.2";
+    public static final String NAME = "OptiFine CIT Patch";
+    public static final Logger LOGGER = LogManager.getLogger();
 }

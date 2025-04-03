@@ -18,10 +18,7 @@ minecraft {
 repositories {
     flatDir { dirs 'libs' }
     maven { url = 'https://www.cursemaven.com' }
-    maven {
-        name 'Hileb'
-        url 'https://ecdcaeb.github.io/maven/'
-    }
+    maven { url = 'https://ecdcaeb.github.io/maven/' }
 }
 
 dependencies {
@@ -65,12 +62,10 @@ jar {
                 "Implementation-Title"    : mod_name,
                 "Implementation-Version"  : mod_version,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "FMLCorePluginContainsMod": "true",
                 "FMLCorePlugin": "${mixin_loader_class}",
                 "FMLCorePluginContainsFMLMod": "true",
                 "ForceLoadAsMod": "true", //Comment out for dev enviroment, uncomment for build
                 "TweakClass": "org.spongepowered.asm.launch.MixinTweaker"
-
         ])
     }
 }
