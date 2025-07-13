@@ -6,12 +6,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(ItemEnchantedBook.class)
-public class RenderItemMixin {
+public class ItemEnchantedBookMixin {
     @ModifyReturnValue(
             method = "hasEffect",
             at = @At(value = "RETURN")
     )
-    private boolean mixin(boolean original){
+    private boolean optifinecitpatch_dontRenderEnchGlint(boolean original){
         return false;
     }
 }

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "optifinecitpatch.mixin.vanilla",
+  "refmap": "mixins.optifinecitpatch.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "client": [
+    "ItemEnchantedBookMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}
