@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
         acceptableRemoteVersions = "*"
 )
 public class OptiFineCITPatch {
-    public static final String MODID = "citpatch";
+    public static final String MODID = "optifinecitpatch";
     public static final String VERSION = "1.0.4";
     public static final String NAME = "OptiFine CIT Patch";
     public static final Logger LOGGER = LogManager.getLogger();
