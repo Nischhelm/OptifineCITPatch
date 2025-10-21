@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "optifinecitpatch.mixin.vanilla",
+  "package": "citpatch.mixin.vanilla",
   "refmap": "mixins.optifinecitpatch.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",

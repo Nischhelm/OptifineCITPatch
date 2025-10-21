@@ -1,4 +1,4 @@
-package optifinecitpatch.mixin.optifine;
+package citpatch.mixin.optifine;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;

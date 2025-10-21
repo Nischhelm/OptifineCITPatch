@@ -1,4 +1,4 @@
-package optifinecitpatch;
+package citpatch;
 
 import fermiumbooter.annotations.MixinConfig;
 import net.minecraftforge.common.config.Config;

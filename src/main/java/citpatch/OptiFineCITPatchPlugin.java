@@ -1,4 +1,4 @@
-package optifinecitpatch;
+package citpatch;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.spongepowered.asm.launch.MixinBootstrap;

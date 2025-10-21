@@ -1,4 +1,4 @@
-package optifinecitpatch.mixin.optifine;
+package citpatch.mixin.optifine;
 
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import net.optifine.CustomItems;

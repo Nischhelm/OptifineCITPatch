@@ -1,4 +1,4 @@
-package optifinecitpatch.mixin.optifine;
+package citpatch.mixin.optifine;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
