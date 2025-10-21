@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "citpatch.mixin",
+  "refmap": "mixins.optifinecitpatch.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "optifine.CustomItemsAccessor"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

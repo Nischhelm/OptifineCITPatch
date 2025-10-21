@@ -2,6 +2,10 @@ package citpatch;
 
 import fermiumbooter.annotations.MixinConfig;
 import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Config(modid = OptiFineCITPatch.MODID)
 @MixinConfig(name = OptiFineCITPatch.MODID)
@@ -30,4 +34,21 @@ public class ConfigHandler {
     @Config.RequiresMcRestart
     @MixinConfig.MixinToggle(lateMixin = "mixins.optifinecitpatch.fixmissing.json", defaultValue = true)
     public static boolean fixMissingEnchantment = true;
+
+    @Config.Comment("Some ids can change when players load into worlds that have different id mappings. This will reload CITs on login to show them correctly.")
+    @Config.Name("Reload CITs on Login")
+    @Config.RequiresMcRestart
+    @MixinConfig.MixinToggle(lateMixin = "mixins.citpatch.reloadonlogin.json", defaultValue = true)
+    @MixinConfig.CompatHandling(modid = "optifine", desired = true, reason = "Mod not needed without optifine, auto-disabling", warnIngame = false)
+    public static boolean reloadOnLogin = true;
+
+    @Mod.EventBusSubscriber(modid = OptiFineCITPatch.MODID)
+    private static class EventHandler{
+        @SubscribeEvent
+        public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+            if(event.getModID().equals(OptiFineCITPatch.MODID)) {
+                ConfigManager.sync(OptiFineCITPatch.MODID, Config.Type.INSTANCE);
+            }
+        }
+    }
 }
